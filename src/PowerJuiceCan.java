@@ -31,4 +31,12 @@ public class PowerJuiceCan implements FoodProduct {
         return price;
     }
 
+    /**
+     * Simply returns the number of cans (1).
+     * @return
+     */
+    public int getCount() {
+        return 1;
+    }
+
 }

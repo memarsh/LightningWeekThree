@@ -13,4 +13,11 @@ public interface FoodProduct {
      */
     public double getPrice();
 
+    /**
+     * The getCount method returns the total number
+     * of items composing this FoodProduct.
+     * @return
+     */
+    public int getCount();
+
 }

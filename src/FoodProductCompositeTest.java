@@ -19,31 +19,31 @@ public class FoodProductCompositeTest {
         FoodProductComposite composite = new FoodProductComposite();
 
         // A new FoodProductComposite should have a total price of $0.00.
-        assertEquals(0.00, composite.getDicountedPrice(), 0.001);
+        assertEquals(0.00, composite.getDiscountedPrice(), 0.001);
 
         composite.addChild(new PowerJuiceCan());
 
         // With a single can added, the price should be equal to a single can.
-        assertEquals(DEFAULTCANPRICE, composite.getDicountedPrice(), 0.001);
+        assertEquals(DEFAULTCANPRICE, composite.getDiscountedPrice(), 0.001);
 
         // For a total of two through five cans, the price should be the
         // number of cans multiplied by the cost of a single can.
         for (int i = 2; i < 6; ++i) {
             composite.addChild(new PowerJuiceCan());
-            assertEquals(DEFAULTCANPRICE * i, composite.getDicountedPrice(), 0.001);
+            assertEquals(DEFAULTCANPRICE * i, composite.getDiscountedPrice(), 0.001);
         }
 
         composite.addChild(new PowerJuiceCan()); // now there are six cans
 
         // The cost of six cans should be the cost of a single can multiplied
         // by six minus the discount for six cans.
-        assertEquals(DEFAULTCANPRICE * 6 - SIXDISCOUNT, composite.getDicountedPrice(), 0.001);
+        assertEquals(DEFAULTCANPRICE * 6 - SIXDISCOUNT, composite.getDiscountedPrice(), 0.001);
 
         composite.addChild(new PowerJuiceCan()); // now there are seven cans
 
         // The cost of seven cans should be the cost of a single can multiplied
         // by seven minus the discount for six cans.
-        assertEquals(DEFAULTCANPRICE * 7 - SIXDISCOUNT, composite.getDicountedPrice(), 0.001);
+        assertEquals(DEFAULTCANPRICE * 7 - SIXDISCOUNT, composite.getDiscountedPrice(), 0.001);
 
         // innerComposite is a six pack
         FoodProductComposite innerComposite = new FoodProductComposite();
@@ -58,7 +58,7 @@ public class FoodProductCompositeTest {
 
         // The cost of 13 cans should be the cost of a single can multiplied
         // by 13 minus the discount for six cans twice.
-        assertEquals((DEFAULTCANPRICE * 13) - (SIXDISCOUNT * 2), composite.getDicountedPrice(), 0.001);
+        assertEquals((DEFAULTCANPRICE * 13) - (SIXDISCOUNT * 2), composite.getDiscountedPrice(), 0.001);
 
         // innerComposite2 is another six pack
         FoodProductComposite innerComposite2 = new FoodProductComposite();
@@ -83,7 +83,7 @@ public class FoodProductCompositeTest {
 
         // The cost of 25 cans should be the cost of a single can multiplied
         // by 25 minus the discount for twenty-four cans.
-        assertEquals(DEFAULTCANPRICE * 25 - TWENTYFOURDISCOUNT, composite.getDicountedPrice(), 0.001);
+        assertEquals(DEFAULTCANPRICE * 25 - TWENTYFOURDISCOUNT, composite.getDiscountedPrice(), 0.001);
 
 
     }

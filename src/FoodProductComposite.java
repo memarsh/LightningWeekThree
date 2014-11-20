@@ -22,16 +22,12 @@ public class FoodProductComposite implements FoodProduct {
     }
 
     /**
-     * The getPrice method sums the price of all its children and returns
-     * the total with a discount to encourage buying in bulk.
+     * The getDiscountedPrice method takes the total non-discounted price, and
+     * applies any relevant discounts to it.
      * @return
      */
-    public double getPrice() {
-        double totalPrice = 0.0;
-
-        for (FoodProduct food : childList) {
-            totalPrice += food.getPrice();
-        }
+    public double getDicountedPrice() {
+        double totalPrice = getPrice();
 
         // Now that we have the total price, we find out the total count of
         // items, and calculate if there are any discounts based on quantity.
@@ -49,7 +45,21 @@ public class FoodProductComposite implements FoodProduct {
         }
 
         return totalPrice;
+    }
 
+    /**
+     * The getPrice method sums the price of all its children and returns
+     * the total with a discount to encourage buying in bulk.
+     * @return
+     */
+    public double getPrice() {
+        double totalPrice = 0.0;
+
+        for (FoodProduct food : childList) {
+            totalPrice += food.getPrice();
+        }
+
+        return totalPrice;
     }
 
     /**

@@ -6,13 +6,14 @@
  */
 public class PowerJuiceCan implements FoodProduct {
 
+    private double DEFAULTPRICE = 2.00;
     private double price;
 
     /**
      * The default contructor sets the price to two dollars.
      */
     public PowerJuiceCan() {
-        price = 2.00;
+        price = DEFAULTPRICE;
     }
 
     /**

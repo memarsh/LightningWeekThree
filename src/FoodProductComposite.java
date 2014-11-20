@@ -26,7 +26,7 @@ public class FoodProductComposite implements FoodProduct {
      * applies any relevant discounts to it.
      * @return
      */
-    public double getDicountedPrice() {
+    public double getDiscountedPrice() {
         double totalPrice = getPrice();
 
         // Now that we have the total price, we find out the total count of
